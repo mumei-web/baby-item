@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RESERVE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>RESERVE</h1>
+    <nav>
+<a href="index.html">HOME</a>
+<a href="menu.html">MENU</a>
+<a href="contact.html">CONTACT</a>
+</nav>
+    <p>こちらからご予約できます。</p>
+  </header>
+
+  <form action="mailto:あなたのメールアドレス" method="post" enctype="text/plain">
+    <p>お名前: <input type="text" name="name" required></p>
+    <p>電話番号: <input type="tel" name="tel" required></p>
+    <p>ご希望日時: <input type="datetime-local" name="date" required></p>
+    <p><button type="submit">送信</button></p>
+  </form>
+</body>
+</html>

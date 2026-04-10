@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>baby item｜ベビー用品レンタル｜八戸市</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Sans+JP:wght@200;300;400&family=Josefin+Sans:wght@100;200;300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* FadeIn animation */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp 0.9s ease both; }
+    .delay-1 { animation-delay: 0.15s; }
+    .delay-2 { animation-delay: 0.30s; }
+    .delay-3 { animation-delay: 0.45s; }
+    .delay-4 { animation-delay: 0.60s; }
+  </style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<header>
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-eyebrow fade-up">八戸市のベビー用品レンタル</span>
+      <h1 class="hero-title fade-up delay-1">
+        baby item
+        <span>赤ちゃんとママに、心地よい選択を。</span>
+      </h1>
+      <div class="hero-divider fade-up delay-2"></div>
+      <div class="hero-actions fade-up delay-3">
+        <a href="menu.html" class="btn btn-white">レンタル商品を見る</a>
+        <a href="#guide" class="btn btn-outline" style="border-color:rgba(255,255,255,0.7); color:#fff;">ご利用ガイド</a>
+      </div>
+    </div>
+  </div>
+
+  <nav>
+    <a href="index.html" class="active">ホーム</a>
+    <a href="#about">コンセプト</a>
+    <a href="menu.html">レンタル商品</a>
+    <a href="#guide">ご利用ガイド</a>
+    <a href="#notice">注意事項</a>
+    <a href="#access">アクセス</a>
+    <a href="#contact">お問い合わせ</a>
+  </nav>
+</header>
+
+<!-- ===== CONCEPT ===== -->
+<section id="about">
+  <div class="section-inner">
+    <span class="section-label">コンセプト</span>
+    <h2 class="section-title">安心を、もっと身近に。</h2>
+    <p class="section-sub">品質へのこだわり</p>
+
+    <div class="concept-grid">
+      <div class="concept-img-block">
+        <img src="imagesbabyitem/babyitem9.jpg" alt="清潔なベビー用品">
+      </div>
+      <div class="concept-text-block">
+        <span class="section-label">清潔・安全</span>
+        <h2>デリケートな赤ちゃんのために、<br>妥協しない衛生管理を。</h2>
+        <p class="concept-quote">「自分の子にも安心して使わせたい」</p>
+        <p>
+          baby itemでは、ベビーベッドやチャイルドシートなど、デリケートな赤ちゃんが使うものだからこそ、専門スタッフが独自の厳しい基準で洗浄・除菌を行っています。
+        </p>
+        <p>
+          一つひとつ丁寧にメンテナンスし、新品同様のクオリティでお届けします。赤ちゃんを初めて迎えるご家族にも、帰省中のおじいちゃん・おばあちゃんにも、気軽にお使いいただけます。
+        </p>
+        <a href="menu.html" class="btn" style="margin-top: 10px; align-self: flex-start;">商品を見る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURES ===== -->
+<section style="background: var(--beige-mid);">
+  <div class="section-inner">
+    <span class="section-label">選ばれる理由</span>
+    <h2 class="section-title">３つの安心ポイント</h2>
+    <p class="section-sub"></p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <span class="feature-icon">🧴</span>
+        <h3>徹底した除菌</h3>
+        <p>クリーン＆リフォームシステムで衛生的に管理。万一故障の場合は無料でお取替えします。</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🛡️</span>
+        <h3>安心の保険加入</h3>
+        <p>あいおいニッセイ同和損保の賠償責任保険に加入。万が一の際も安心してお使いいただけます。</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📦</span>
+        <h3>丁寧な取付説明</h3>
+        <p>チャイルドシートの取り付けやベビーベッドの組み立て方法を、お渡し時に丁寧にご説明します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GUIDE ===== -->
+<section id="guide" style="background: var(--white);">
+  <div class="section-inner">
+    <span class="section-label">ご利用ガイド</span>
+    <h2 class="section-title">ご利用にあたって</h2>
+    <p class="section-sub">お受け取りからお支払いまで</p>
+
+    <div class="guide-wrap">
+      <!-- 重要なお知らせ -->
+      <div style="background: var(--pink-pale); border-radius: var(--radius-lg); padding: 36px 44px; margin-bottom: 28px; text-align: left; border-left: 4px solid var(--pink);">
+        <p style="font-family:'Josefin Sans',sans-serif; font-size:10px; letter-spacing:3px; color:var(--pink); margin-bottom:16px;">重要なお知らせ</p>
+        <ul style="list-style:none; padding:0; font-size:14.5px; color:var(--brown-dark); line-height:2.2;">
+          <li>📅 <strong>完全ご予約制</strong>となります。必ずご予約の上ご来店ください。</li>
+          <li>🚪 ご予約の日に店舗へ参りますので、<strong>予約なしでのご来店はご遠慮ください</strong>。</li>
+          <li>🗓️ <strong>火曜・金曜は他業務のためお休み</strong>となっております。</li>
+          <li>📦 レンタルは<strong>２週間の料金から</strong>となりますのでご了承ください。</li>
+          <li>📞 お電話・LINE・ホームページよりお問い合わせいただけます。</li>
+        </ul>
+      </div>
+        <div class="guide-row">
+          <span class="guide-label">配送エリア</span>
+          <p>八戸市を中心とした近郊エリア（詳細はお問合せください）</p>
+        </div>
+        <div class="guide-row">
+          <span class="guide-label">商品受取</span>
+          <p>
+            お日にちをご相談の上、<strong>ご来店</strong>となります。<br>
+            チャイルドシートはお取り付けも承ります。<br>
+            ベビーベッドの組み立て方法は、お渡し時にご説明します。（HPの動画もご覧ください）
+          </p>
+        </div>
+        <div class="guide-row">
+          <span class="guide-label">お支払い</span>
+          <p>レンタル料金は<strong>商品お渡しの際、現金のみ</strong>となります。ご了承ください。</p>
+        </div>
+        <div class="guide-row">
+          <span class="guide-label">延長</span>
+          <p>ご希望の際はお電話または公式LINEにてご連絡ください。</p>
+        </div>
+        <div class="guide-row">
+          <span class="guide-label">返却・交換</span>
+          <p>レンタル期間中に不要になった場合はご返却ください。返金はできません。不具合がございましたら交換いたします。</p>
+        </div>
+        <div class="guide-row">
+          <span class="guide-label">破損・汚れ</span>
+          <p>通常使用の範囲内のキズ等は弁償不要です。正常な使用以外による破損は修理の実費をいただく場合があります。</p>
+        </div>
+        <div class="guide-row">
+          <span class="guide-label">ご予約</span>
+          <p>お電話、または<strong>公式LINE</strong>より承ります</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 注意事項 ===== -->
+<section id="notice">
+  <div class="section-inner">
+    <span class="section-label">注意事項</span>
+    <h2 class="section-title">注意事項</h2>
+    <p class="section-sub">ご利用前にご確認ください</p>
+
+    <div class="notice-grid">
+      <div class="notice-card">
+        <h3>品質保証について</h3>
+        <p>
+          レンタル用品はクリーン＆リフォームシステムにより衛生的に管理しています。<br>
+          万一故障の場合は無料でお取替えします。<br>
+          ただし、正常な使用以外による破損は修理の実費をいただきます。<br>
+          あいおいニッセイ同和損保の賠償責任保険に加入しております。
+        </p>
+      </div>
+      <div class="notice-card">
+        <h3>ご使用上のお願い</h3>
+        <ul>
+          <li>お子様の月齢・使用期間・居場所に合わせてお選びください</li>
+          <li>レンタル用品を他の方に貸すことはご遠慮ください</li>
+          <li>転居の場合は1週間以上前にご連絡ください</li>
+        </ul>
+      </div>
+      <div class="notice-card">
+        <h3>返品・交換について</h3>
+        <p>
+          レンタル期間中に不要になった場合はご返却ください。<br>
+          <strong>ただし、返金はできません</strong>のでご了承ください。<br>
+          不具合がございましたら速やかに交換いたします。お気軽にご連絡ください。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ACCESS ===== -->
+<section id="access" style="background: var(--white);">
+  <div class="section-inner">
+    <span class="section-label">アクセス</span>
+    <h2 class="section-title">店舗の場所</h2>
+    <p class="section-sub">店舗案内</p>
+    <div class="access-wrap">
+      <p class="access-address">〒039-1165　青森県八戸市石堂4丁目13-5　10号室</p>
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3032.4031642184977!2d141.47871039999998!3d40.53268119999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f9b51eca44dba95%3A0xa06d738d625b5e56!2z44CSMDM5LTExNjUg6Z2S5qOu55yM5YWr5oi45biC55-z5aCC77yU5LiB55uu77yR77yT4oiS77yVIOS4readkeS9j-WuhSAxMA!5e0!3m2!1sja!2sjp!4v1775023647585!5m2!1sja!2sjp" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="contact-section">
+  <div class="section-inner">
+    <span class="section-label light">ご予約・お問い合わせ</span>
+    <h2 class="section-title light">お問い合わせ</h2>
+    <p>在庫確認・レンタルのご予約・お問い合わせはこちら<br>お電話または公式LINEにてお気軽にどうぞ</p>
+    <a href="menu.html" class="btn btn-white">空き状況を確認する</a>
+    <p class="contact-note">※ 営業時間・定休日はお問い合わせください</p>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p class="footer-logo">baby item</p>
+  <p class="footer-sub">Baby Item Rental · Hachinohe, Aomori</p>
+  <p class="footer-copy">© 2026 baby item. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
