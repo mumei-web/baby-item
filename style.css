@@ -153,7 +153,7 @@ section { padding: 90px 20px; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url('imagesbabyitem/babyitem3.jpg') center/cover no-repeat;
+  background: url('imagesbabyitem/babyitem10.jpg') center/cover no-repeat;
   filter: brightness(0.78);
   z-index: 1;
   transform: scale(1.03);
