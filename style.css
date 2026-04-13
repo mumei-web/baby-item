@@ -13,6 +13,10 @@
   --shadow-card: 0 4px 24px rgba(180,130,120,0.10);
   --radius-lg:   18px;
   --radius-sm:   10px;
+
+  /* 丸みのあるフォント */
+  --font-round-jp: 'M PLUS Rounded 1c', 'Noto Sans JP', sans-serif;
+  --font-round-en: 'Nunito', sans-serif;
 }
 
 /* ===== リセット ===== */
@@ -26,6 +30,12 @@ body {
   background: var(--beige);
   line-height: 1.9;
   overflow-x: hidden;
+}
+
+/* ===== 丸フォント共通クラス ===== */
+.rounded-title {
+  font-family: var(--font-round-jp) !important;
+  letter-spacing: 4px !important;
 }
 
 /* ===== ナビゲーション ===== */
@@ -169,8 +179,10 @@ section { padding: 90px 20px; }
   margin-bottom: 20px;
   display: block;
 }
+
+/* ヒーロータイトル「baby item」を丸フォントに */
 .hero-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-round-en);
   font-weight: 300;
   font-size: clamp(52px, 10vw, 90px);
   letter-spacing: 8px;
@@ -181,8 +193,8 @@ section { padding: 90px 20px; }
 .hero-title span {
   display: block;
   font-size: clamp(15px, 2vw, 19px);
-  font-family: 'Noto Sans JP', sans-serif;
-  font-weight: 200;
+  font-family: var(--font-round-jp);
+  font-weight: 300;
   letter-spacing: 5px;
   margin-top: 14px;
   color: rgba(255,255,255,0.9);
@@ -234,6 +246,14 @@ section { padding: 90px 20px; }
   color: var(--pink-dark);
   margin-bottom: 24px;
   line-height: 1.4;
+}
+/* concept内のh2に丸フォント適用 */
+.concept-text-block h2.rounded-title {
+  font-family: var(--font-round-jp) !important;
+  font-weight: 400;
+  font-size: clamp(18px, 2.4vw, 26px);
+  letter-spacing: 2px !important;
+  line-height: 1.7;
 }
 .concept-text-block p {
   font-size: 14px;
@@ -412,6 +432,61 @@ section { padding: 90px 20px; }
   letter-spacing: 1px;
 }
 
+/* お問い合わせボタングループ */
+.contact-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 400px;
+  margin: 0 auto 10px;
+}
+.contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 28px;
+  border-radius: 16px;
+  text-decoration: none;
+  transition: transform 0.25s, box-shadow 0.25s, opacity 0.25s;
+  text-align: left;
+}
+.contact-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+  opacity: 0.92;
+}
+.contact-btn-line {
+  background: #06C755;
+}
+.contact-btn-mail {
+  background: rgba(255,255,255,0.18);
+  border: 1.5px solid rgba(255,255,255,0.45);
+  backdrop-filter: blur(6px);
+}
+.contact-btn-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+.contact-btn-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.contact-btn-label {
+  font-family: 'M PLUS Rounded 1c', 'Noto Sans JP', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: 1.5px;
+}
+.contact-btn-sub {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 11px;
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 1.5px;
+}
+
 /* ===== フッター ===== */
 footer {
   background: var(--brown-dark);
@@ -420,11 +495,12 @@ footer {
   padding: 60px 20px;
 }
 .footer-logo {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-round-en);
   font-size: 28px;
   letter-spacing: 7px;
   color: rgba(255,255,255,0.9);
   margin-bottom: 8px;
+  font-weight: 300;
 }
 .footer-sub {
   font-size: 11px;
