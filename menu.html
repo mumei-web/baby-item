@@ -35,9 +35,119 @@
       font-size: 10px;
       color: var(--brown-light);
     }
+
+    /* ===== 動画ボタン ===== */
+    .video-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      padding: 10px 20px;
+      background: var(--pink-pale);
+      border: 1.5px solid var(--pink);
+      border-radius: 30px;
+      color: var(--pink-dark);
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: all 0.3s;
+      width: 100%;
+      justify-content: center;
+    }
+    .video-btn:hover {
+      background: var(--pink);
+      color: #fff;
+    }
+    .video-btn svg {
+      flex-shrink: 0;
+    }
+
+    /* ===== モーダル ===== */
+    .video-modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      backdrop-filter: blur(4px);
+    }
+    .video-modal-overlay.active {
+      display: flex;
+    }
+    .video-modal-box {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      width: 100%;
+      max-width: 680px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      animation: modalIn 0.3s ease;
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: scale(0.95) translateY(12px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .video-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--beige-mid);
+    }
+    .video-modal-title {
+      font-family: 'M PLUS Rounded 1c', 'Noto Sans JP', sans-serif;
+      font-size: 14px;
+      color: var(--brown-dark);
+      letter-spacing: 1px;
+    }
+    .video-modal-close {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--brown-light);
+      font-size: 22px;
+      line-height: 1;
+      padding: 4px 8px;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .video-modal-close:hover {
+      background: var(--beige-mid);
+      color: var(--brown-dark);
+    }
+    .video-modal-body {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #000;
+    }
+    .video-modal-body video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
   </style>
 </head>
 <body>
+
+<!-- ===== 動画モーダル ===== -->
+<div class="video-modal-overlay" id="videoModal" onclick="closeModalOnOverlay(event)">
+  <div class="video-modal-box">
+    <div class="video-modal-header">
+      <span class="video-modal-title" id="videoModalTitle">組み立て方動画</span>
+      <button class="video-modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="video-modal-body">
+      <video id="modalVideo" controls playsinline>
+        <source id="modalVideoSrc" src="" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</div>
 
 <!-- ===== NAV ===== -->
 <nav>
@@ -189,6 +299,14 @@
               </tbody>
             </table>
           </div>
+          <!-- 組み立て動画ボタン -->
+          <button class="video-btn" onclick="openModal('https://release-assets.githubusercontent.com/github-production-release-asset/1206720495/74441c22-1f52-42a7-9769-a99ff51b30b6?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-04-21T07%3A27%3A28Z&rscd=attachment%3B+filename%3Drit.MP4&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-04-21T06%3A26%3A34Z&ske=2026-04-21T07%3A27%3A28Z&sks=b&skv=2018-11-09&sig=k6wyqVmc5BnfNiK3NVMvRnuarRACAy7tQHkaId3REsc%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc3Njc1NjEwMywibmJmIjoxNzc2NzU0MzAzLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.s-0B-ZG9YjWbrKFTsAUm8iI8sVFh8yPxBak99zVXuhM', 'リトルベット｜組み立て方動画')">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M6.5 5.5L11 8L6.5 10.5V5.5Z" fill="currentColor"/>
+            </svg>
+            組み立て方動画を見る
+          </button>
         </div>
       </div>
 
@@ -228,6 +346,14 @@
               </tbody>
             </table>
           </div>
+          <!-- 組み立て動画ボタン -->
+          <button class="video-btn" onclick="openModal('https://release-assets.githubusercontent.com/github-production-release-asset/1206720495/d3c12741-6dd5-4fdd-b865-54a4ba449056?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-04-21T07%3A38%3A05Z&rscd=attachment%3B+filename%3Dkyasu.MP4&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-04-21T06%3A37%3A09Z&ske=2026-04-21T07%3A38%3A05Z&sks=b&skv=2018-11-09&sig=3iuwAgrWSLqRDWw2YYs%2BrApRS1E%2FXSJ7FEsGOOY6tvY%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc3Njc1Nzg5NywibmJmIjoxNzc2NzU0Mjk3LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.NB5nwQyp0U4o0usmXFzSgoeCQITIJ1pgZSkV3uG8V-M', 'クラウン中型ベビーベッド｜組み立て方動画')">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M6.5 5.5L11 8L6.5 10.5V5.5Z" fill="currentColor"/>
+            </svg>
+            組み立て方動画を見る
+          </button>
         </div>
       </div>
 
@@ -481,6 +607,38 @@
     const isOpen = wrap.classList.toggle('open');
     btn.textContent = isOpen ? '▴ 閉じる' : '▾ 7〜12ヶ月の料金を見る';
   }
+
+  function openModal(videoUrl, title) {
+    const modal = document.getElementById('videoModal');
+    const video = document.getElementById('modalVideo');
+    const src   = document.getElementById('modalVideoSrc');
+    const titleEl = document.getElementById('videoModalTitle');
+
+    titleEl.textContent = title;
+    src.src = videoUrl;
+    video.load();
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('videoModal');
+    const video = document.getElementById('modalVideo');
+    modal.classList.remove('active');
+    video.pause();
+    document.body.style.overflow = '';
+  }
+
+  function closeModalOnOverlay(e) {
+    if (e.target === document.getElementById('videoModal')) {
+      closeModal();
+    }
+  }
+
+  // ESCキーで閉じる
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+  });
 </script>
 
 </body>
