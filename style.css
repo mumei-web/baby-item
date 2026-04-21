@@ -173,6 +173,7 @@ section { padding: 90px 20px; }
 }
 .hero-eyebrow {
   font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
   font-size: 11px;
   letter-spacing: 7px;
   color: rgba(255,255,255,0.85);
@@ -183,7 +184,7 @@ section { padding: 90px 20px; }
 /* ヒーロータイトル「baby item」を丸フォントに */
 .hero-title {
   font-family: var(--font-round-en);
-  font-weight: 300;
+  font-weight: 500;
   font-size: clamp(52px, 10vw, 90px);
   letter-spacing: 8px;
   color: #fff;
@@ -194,7 +195,7 @@ section { padding: 90px 20px; }
   display: block;
   font-size: clamp(15px, 2vw, 19px);
   font-family: var(--font-round-jp);
-  font-weight: 300;
+  font-weight: 500;
   letter-spacing: 5px;
   margin-top: 14px;
   color: rgba(255,255,255,0.9);
