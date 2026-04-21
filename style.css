@@ -710,3 +710,7 @@ footer {
   margin-top: 4px;
   letter-spacing: 1px;
 }
+.sp-br { display: none; }
+@media (max-width: 768px) {
+  .sp-br { display: block; content: ""; }
+}
