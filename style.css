@@ -714,3 +714,23 @@ footer {
 @media (max-width: 768px) {
   .sp-br { display: block; content: ""; }
 }
+@media (max-width: 768px) {
+  /* ガイド内のテキストブロックを中央に整える */
+  .guide-row {
+    display: block;      /* 縦並びに強制 */
+    text-align: center;  /* テキストを中央寄せ */
+    padding: 20px 15px;  /* 左右に程よい余白を作る */
+  }
+
+  .guide-row p {
+    display: inline-block; /* 中央寄せしつつ、文章の左端は揃える（読みやすさ重視） */
+    text-align: left;      /* 文章自体は左端を揃えて読みやすく */
+    width: 100%;           /* 幅を広げる */
+    max-width: 320px;      /* 広がりすぎないように制限 */
+  }
+
+  .guide-label {
+    display: inline-block;
+    margin-bottom: 10px;   /* ラベル（商品受取など）の下に隙間を作る */
+  }
+}
